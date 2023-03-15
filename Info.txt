@@ -1,0 +1,34 @@
+Paths
+    -> Folder Path.
+    -> File Path.
+
+Ways (Assessing)
+    -> Absolute Path. 
+    -> Relative Path.
+
+Example
+
+    Test Folder you are in
+
+    / -> Forward
+    \ -> Backward
+
+    C -> Users -> Test -> names.txt
+    Absolute : C://Users//Test//names.txt
+    Absolute : C:\Users\Test\names.txt
+
+    Relative : ./names.txt
+
+    Users -> school.txt
+    
+    Relative : ../school.txt
+
+    C -> students.txt
+
+    Relative : ../../students.txt
+
+
+SASS
+
+1. normal - styles.scss
+2. partial files - _variables.scss

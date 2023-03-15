@@ -1,0 +1,246 @@
+
+// 9. Import
+@import 'variables';
+
+// 1. Variables
+// Syntax : $variablename
+$color : red;
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: $color;
+    border-radius: 10px;
+}
+
+// 2. Nesting
+// Can nest selectors more deeper.
+
+.outer {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+
+    .inner {
+        width: 150px;
+        height: 150px;
+        background-color: aquamarine;
+
+        .moreinner {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 230, 0);
+        }
+    }
+
+    .secInner {
+        width: 10px;
+        height: 10px;
+        background-color: #f41414;
+    }
+
+}
+
+// Without For loop
+
+// .text-1 {
+//     font-family: 'Times New Roman', Times, serif;
+//     font-size: 20px;
+// }
+
+// .text-2 {
+//     font-family: 'Times New Roman', Times, serif;
+//     font-size: 40px;
+// }
+
+// 3. For Loop
+// Syntax @for 'to' - doesn't take last value. 
+//             'through' - takes last value.
+
+$a : 1;
+$b : 5;
+
+// through
+
+@for $i from $a through $b {
+    .text-#{$i} {
+        font-size: 15px * $i;
+    }
+} 
+
+// We can use nested for loop. ###
+
+// 4. Using Variables in selectors
+// Syntax ./#selector...#{var}
+$a : 1;
+
+#text-#{$a} {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100px;
+}
+
+// 5. While Loop
+// Syntax @while (cond) {...}
+// If we know any condition then use while.
+$start : 1;
+
+@while ($start <= 5) {
+    .text-#{$start} {
+        font-size: 15px * $start;
+    }
+    $start : $start + 1;
+}
+
+// 6. mixins and include
+// Declaration : @mixin and @include
+
+@mixin borderStyle($size, $type, $color) {
+    border : $size $type $color;
+}
+
+#text1 {
+    width: 100%;
+    background-color: red;
+    @include borderStyle(1px, solid, black);
+}
+
+// 7. if | else if | else
+// Declarations : @if | @else if | @else
+
+// r -> red | y -> yellow | g -> green
+
+@mixin bgcolor($color) {
+    @if ($color == r) {
+        background-color: red;
+    }
+    @else if ($color == y) {
+        background-color: yellow;
+    }
+    @else if ($color == g) {
+        background-color: green;
+    }
+    @else {
+        background-color: black;
+    }
+}
+
+.box1 , .box2 , .box3 {
+    width: 100px;
+    height: 100px;
+}
+
+.box1 {
+    @include bgcolor(u);
+}
+
+$a : 1;
+$b : 6;
+
+$col : r;
+
+@for $i from $a to $b {
+    .box#{$i} {
+        width: 100px;
+        height: 100px;
+        @include bgcolor($col);
+    }
+    @if ($col == r) {
+        $col : y;
+    }
+    @else if ($col == y) {
+        $col : g;
+    }
+    @else {
+        $col : u;
+    }
+}
+
+// 8. @extend
+// Used for extending one class to other.
+
+.info {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.moreInfo {
+    @extend .info;
+    border-radius: 10px;
+}
+
+
+// @import from partial _variables.scss
+
+.info {
+    width: 100px;
+    height: 100px;
+    background-color: $colorfromotherfile;
+}
+
+// Difference b/w SCSS & Sass
+// SASS - .scss | .sass
+// .scss is very similar to our reg CSS.
+// .sass - indentations
+
+// 10. Functions
+// Declaration @function & @return
+@function border($rad) {
+    @return $rad*10;
+}
+
+$radius : 1;
+
+@for $i from 1 to 4 {
+    .box#{$i} {
+        width: 100px;
+        height: 100px;
+        background: red;
+        border-radius: border($radius) * 1px; // 5px
+    }
+    $radius : $radius + 1;
+}
+
+// 11. & Using in class.
+// Represents present class.
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+
+    &:hover {
+        transform: scale(1.20);
+    }
+}
+
+.box:hover {
+    transform: scale(1.20);
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: flex;
+
+    &::before {
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+
+    }
+
+}
+
+#text {
+    &::before {
+        content : "Hey!";
+    }
+
+    &::after {
+        content : 'Bye!';
+    }
+}

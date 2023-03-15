@@ -1,0 +1,188 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 10px;
+}
+
+.outer {
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+}
+.outer .inner {
+  width: 150px;
+  height: 150px;
+  background-color: aquamarine;
+}
+.outer .inner .moreinner {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 230, 0);
+}
+.outer .secInner {
+  width: 10px;
+  height: 10px;
+  background-color: #f41414;
+}
+
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
+}
+
+#text-1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 100px;
+}
+
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
+}
+
+#text1 {
+  width: 100%;
+  background-color: red;
+  border: 1px solid black;
+}
+
+.box1, .box2, .box3 {
+  width: 100px;
+  height: 100px;
+}
+
+.box1 {
+  background-color: black;
+}
+
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.box2 {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+.box3 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+.box4 {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+.box5 {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+.info, .moreInfo {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+.moreInfo {
+  border-radius: 10px;
+}
+
+.info, .moreInfo {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+.box1 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 10px;
+}
+
+.box2 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 20px;
+}
+
+.box3 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 30px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+}
+.box:hover {
+  transform: scale(1.2);
+}
+
+.box:hover {
+  transform: scale(1.2);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: flex;
+}
+.box::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+}
+
+#text::before {
+  content: "Hey!";
+}
+#text::after {
+  content: "Bye!";
+}/*# sourceMappingURL=styles.css.map */
